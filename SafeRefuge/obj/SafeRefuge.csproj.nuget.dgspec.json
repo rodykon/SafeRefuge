@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\KakasF\\Desktop\\SafeRefuge\\SafeRefuge\\SafeRefuge.csproj": {}
+    "C:\\Users\\KakasF\\Desktop\\safe\\SafeRefuge\\SafeRefuge.csproj": {}
   },
   "projects": {
-    "C:\\Users\\KakasF\\Desktop\\SafeRefuge\\SafeRefuge\\SafeRefuge.csproj": {
+    "C:\\Users\\KakasF\\Desktop\\safe\\SafeRefuge\\SafeRefuge.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\KakasF\\Desktop\\SafeRefuge\\SafeRefuge\\SafeRefuge.csproj",
+        "projectUniqueName": "C:\\Users\\KakasF\\Desktop\\safe\\SafeRefuge\\SafeRefuge.csproj",
         "projectName": "SafeRefuge",
-        "projectPath": "C:\\Users\\KakasF\\Desktop\\SafeRefuge\\SafeRefuge\\SafeRefuge.csproj",
+        "projectPath": "C:\\Users\\KakasF\\Desktop\\safe\\SafeRefuge\\SafeRefuge.csproj",
         "packagesPath": "C:\\Users\\KakasF\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\KakasF\\Desktop\\SafeRefuge\\SafeRefuge\\obj\\",
+        "outputPath": "C:\\Users\\KakasF\\Desktop\\safe\\SafeRefuge\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\KakasF\\Desktop\\SafeRefuge\\SafeRefuge\\NuGet.Config",
+          "C:\\Users\\KakasF\\Desktop\\safe\\SafeRefuge\\NuGet.Config",
           "C:\\Users\\KakasF\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [

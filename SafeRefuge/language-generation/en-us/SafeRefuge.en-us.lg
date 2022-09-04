@@ -6,8 +6,10 @@
 ]
 
 # SendActivity_Greeting_text()
-- Welcome to Safe Refuge Bot.
-- I am here to help you find the place you need to go to.
+- ```Hello, I'm Safe Refuge Bot.\n
+I'm here to assist your with everything you need :)\n
+type "help" for help.\n
+type "search" to start searching.```
 # SendActivity_DidNotUnderstand()
 [Activity
     Text = ${SendActivity_DidNotUnderstand_text()}
@@ -15,3 +17,22 @@
 
 # SendActivity_DidNotUnderstand_text()
 - Sorry, I didn't get that.
+# SendActivity_XKPRgt()
+[Activity
+    Text = ${SendActivity_XKPRgt_text()}
+]
+
+# SendActivity_XKPRgt_text()
+- ```HELP\n
+type "search" to start looking for a place\n
+type "help" for help```
+# SendActivity_VVJidy()
+[Activity
+    Text = ${SendActivity_VVJidy_text()}
+]
+
+# SendActivity_VVJidy_text()
+- ```Hello, I'm Safe Refuge Bot.\n
+I'm here to assist your with everything you need :)\n
+type "help" for help.\n
+type "search" to start searching.```

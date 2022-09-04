@@ -116,7 +116,17 @@
           "cases": [
             {
               "value": "Anywhere",
-              "actions": []
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "wr9GiO"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "filtered_pois",
+                  "options": {}
+                }
+              ]
             },
             {
               "value": "Country",
@@ -201,7 +211,34 @@
                     "id": "965Pj8",
                     "comment": "Checks if any city or specific city"
                   },
-                  "condition": "=user.city==\"Any\""
+                  "condition": "=user.city==\"Any\"",
+                  "elseActions": [
+                    {
+                      "$kind": "Microsoft.BeginDialog",
+                      "$designer": {
+                        "id": "xX1kLl"
+                      },
+                      "activityProcessed": true,
+                      "dialog": "filtered_pois",
+                      "options": {
+                        "country": "${user.country}",
+                        "city": "${user.city}"
+                      }
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.BeginDialog",
+                      "$designer": {
+                        "id": "4n8hJy"
+                      },
+                      "activityProcessed": true,
+                      "dialog": "filtered_pois",
+                      "options": {
+                        "country": "${user.country}"
+                      }
+                    }
+                  ]
                 }
               ]
             },
@@ -219,7 +256,17 @@
             }
           ],
           "condition": "user.location",
-          "default": []
+          "default": [
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "F3tImv"
+              },
+              "activityProcessed": true,
+              "dialog": "filtered_pois",
+              "options": {}
+            }
+          ]
         }
       ]
     }

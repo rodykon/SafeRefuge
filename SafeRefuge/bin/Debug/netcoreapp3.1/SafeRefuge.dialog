@@ -42,21 +42,17 @@
                   "activity": "${SendActivity_Greeting()}"
                 }
               ]
-            },
-            {
-              "$kind": "Microsoft.BeginDialog",
-              "$designer": {
-                "id": "BgXIbU"
-              },
-              "activityProcessed": true,
-              "dialog": "get_poi",
-              "options": {
-                "check": "cool"
-              }
             }
           ]
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "hVYqCe"
+          }
         }
-      ]
+      ],
+      "runOnce": false
     },
     {
       "$kind": "Microsoft.OnUnknownIntent",
@@ -90,6 +86,46 @@
           },
           "activityProcessed": true,
           "dialog": "get_poi"
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "KEM8SX"
+          }
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "3pD74C",
+        "name": "Help"
+      },
+      "intent": "Help",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "XKPRgt"
+          },
+          "activity": "${SendActivity_XKPRgt()}"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "gbxUQ2",
+        "name": "Welcome"
+      },
+      "intent": "Welcome",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "VVJidy"
+          },
+          "activity": "${SendActivity_VVJidy()}"
         }
       ]
     }
@@ -101,7 +137,15 @@
     "intents": [
       {
         "intent": "poi",
-        "pattern": "poi"
+        "pattern": "search|poi"
+      },
+      {
+        "intent": "Help",
+        "pattern": "help|\\?"
+      },
+      {
+        "intent": "Welcome",
+        "pattern": "welcome|hello|hi|sup|privet|/start"
       }
     ]
   }

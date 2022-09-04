@@ -1,0 +1,78 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "AVCEtE",
+    "name": "filtered_pois",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "bgUCjQ"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "MOCPUJ"
+          },
+          "resultProperty": "dialog.http_results",
+          "method": "GET",
+          "url": "http://c4u-match-org.appspot.com/poi/search?skip=0&limit=20&min_distance=0&max_distance=500000&city=${dialog.city}&&country=${dialog.country}&categories=${dialog.categories}&add_distance=true&fields=basic",
+          "contentType": "application/json",
+          "responseType": "json"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "vnIPwa"
+          },
+          "condition": "=dialog.http_results.statusCode == 200",
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "qHyLzD"
+              },
+              "activity": "${SendActivity_qHyLzD()}"
+            }
+          ],
+          "actions": [
+            {
+              "$kind": "Microsoft.Foreach",
+              "$designer": {
+                "id": "Kk2eOd"
+              },
+              "index": "dialog.foreach.index",
+              "value": "dialog.foreach.value",
+              "itemsProperty": "dialog.http_results.content.items",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "v36vjV"
+                  },
+                  "activity": "${SendActivity_v36vjV()}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "QMGmCX"
+          }
+        }
+      ]
+    }
+  ],
+  "generator": "filtered_pois.lg",
+  "recognizer": "filtered_pois.lu.qna",
+  "id": "filtered_pois"
+}

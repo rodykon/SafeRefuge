@@ -29,7 +29,7 @@
 # ChoiceInput_Prompt_hMJ4eH_text()
 - What country to search in?
 # ChoiceInput_Prompt_OFseeN_text()
-- What city to search in?
+- What city to search in? (Type Any for any city)
 # ChoiceInput_Prompt_OFseeN()
 [Activity
     Text = ${ChoiceInput_Prompt_OFseeN_text()}

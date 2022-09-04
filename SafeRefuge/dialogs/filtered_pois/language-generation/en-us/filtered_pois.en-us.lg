@@ -1,0 +1,16 @@
+[import](common.lg)
+
+# SendActivity_qHyLzD()
+[Activity
+    Text = ${SendActivity_qHyLzD_text()}
+]
+
+# SendActivity_qHyLzD_text()
+- Something went wrong :(
+# SendActivity_v36vjV()
+[Activity
+    Text = ${SendActivity_v36vjV_text()}
+]
+
+# SendActivity_v36vjV_text()
+- ${dialog.foreach.value.name}
