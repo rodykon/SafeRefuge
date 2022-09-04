@@ -1,26 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "/home/kali/dev/selek/SafeRefuge/SafeRefuge/SafeRefuge.csproj": {}
+    "C:\\Users\\KakasF\\Desktop\\SafeRefuge\\SafeRefuge\\SafeRefuge.csproj": {}
   },
   "projects": {
-    "/home/kali/dev/selek/SafeRefuge/SafeRefuge/SafeRefuge.csproj": {
+    "C:\\Users\\KakasF\\Desktop\\SafeRefuge\\SafeRefuge\\SafeRefuge.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/kali/dev/selek/SafeRefuge/SafeRefuge/SafeRefuge.csproj",
+        "projectUniqueName": "C:\\Users\\KakasF\\Desktop\\SafeRefuge\\SafeRefuge\\SafeRefuge.csproj",
         "projectName": "SafeRefuge",
-        "projectPath": "/home/kali/dev/selek/SafeRefuge/SafeRefuge/SafeRefuge.csproj",
-        "packagesPath": "/home/kali/.nuget/packages/",
-        "outputPath": "/home/kali/dev/selek/SafeRefuge/SafeRefuge/obj/",
+        "projectPath": "C:\\Users\\KakasF\\Desktop\\SafeRefuge\\SafeRefuge\\SafeRefuge.csproj",
+        "packagesPath": "C:\\Users\\KakasF\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\KakasF\\Desktop\\SafeRefuge\\SafeRefuge\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/kali/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\KakasF\\Desktop\\SafeRefuge\\SafeRefuge\\NuGet.Config",
+          "C:\\Users\\KakasF\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://botbuilder.myget.org/F/botbuilder-v4-dotnet-daily/api/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
@@ -71,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.420/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.422\\RuntimeIdentifierGraph.json"
         }
       }
     }

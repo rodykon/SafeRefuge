@@ -1,0 +1,16 @@
+[import](common.lg)
+
+# SendActivity_dzZ47C()
+[Activity
+    Text = ${SendActivity_dzZ47C_text()}
+]
+
+# SendActivity_dzZ47C_text()
+- Lets search for pois!
+# ChoiceInput_Prompt_Z2AuVh()
+[Activity
+    Text = ${ChoiceInput_Prompt_Z2AuVh_text()}
+]
+
+# ChoiceInput_Prompt_Z2AuVh_text()
+- What are you looking for? ${user.catslist}

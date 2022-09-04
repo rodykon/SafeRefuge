@@ -63,9 +63,35 @@
           "activity": "${SendActivity_DidNotUnderstand()}"
         }
       ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "DdHy0K",
+        "name": "poi"
+      },
+      "intent": "poi",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "mgBc52"
+          },
+          "activityProcessed": true,
+          "dialog": "get_poi"
+        }
+      ]
     }
   ],
   "generator": "SafeRefuge.lg",
   "id": "SafeRefuge",
-  "recognizer": "SafeRefuge.lu.qna"
+  "recognizer": {
+    "$kind": "Microsoft.RegexRecognizer",
+    "intents": [
+      {
+        "intent": "poi",
+        "pattern": "poi"
+      }
+    ]
+  }
 }

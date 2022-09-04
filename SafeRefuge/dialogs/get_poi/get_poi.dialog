@@ -1,0 +1,90 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "yuk8bN",
+    "name": "get_poi",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "WNewlY"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "dzZ47C"
+          },
+          "activity": "${SendActivity_dzZ47C()}"
+        },
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "eF1ndo",
+            "comment": "Gets the categories for the api"
+          },
+          "resultProperty": "dialog.cats",
+          "method": "GET",
+          "url": "http://c4u-match-org.appspot.com/common/?skip=0&limit=100",
+          "responseType": "json",
+          "contentType": "application/json"
+        },
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "id": "9HRNy3"
+          },
+          "index": "dialog.foreach.index",
+          "value": "dialog.foreach.value",
+          "itemsProperty": "dialog.cats.content.items",
+          "actions": [
+            {
+              "$kind": "Microsoft.EditArray",
+              "$designer": {
+                "id": "Cz1F4p"
+              },
+              "changeType": "push",
+              "itemsProperty": "user.catslist",
+              "value": "=dialog.foreach.value.category"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "Z2AuVh"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_Z2AuVh()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "style": "heroCard",
+          "property": "user.choice",
+          "choices": "${user.catslist}",
+          "recognizerOptions": {
+            "recognizeOrdinals": true
+          }
+        }
+      ]
+    }
+  ],
+  "generator": "get_poi.lg",
+  "recognizer": "get_poi.lu.qna",
+  "id": "get_poi"
+}
