@@ -16,6 +16,17 @@
       },
       "actions": [
         {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "bwRlrh"
+          },
+          "activityProcessed": true,
+          "dialog": "filtered_pois",
+          "options": {
+            "city": "Warsaw"
+          }
+        },
+        {
           "$kind": "Microsoft.Foreach",
           "$designer": {
             "id": "518944",

@@ -1,0 +1,80 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "BOOe66",
+    "name": "filtered_pois",
+    "comment": "List POIs filtered by location"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "f3Vgaw"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "lfhnsf"
+          },
+          "method": "GET",
+          "url": "http://c4u-match-org.appspot.com/poi/search?skip=0&limit=20&min_distance=0&max_distance=500000&city=${dialog.city}&&country=${dialog.country}&categories=${dialog.categories}&add_distance=true&fields=basic",
+          "responseType": "json",
+          "contentType": "application/json",
+          "resultProperty": "dialog.http_results"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "4uCnv1"
+          },
+          "condition": "=dialog.http_results.statusCode == 200",
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "POfQnp"
+              },
+              "activity": "${SendActivity_POfQnp()}"
+            }
+          ],
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "JLQ4YV"
+              },
+              "property": "dialog.pois",
+              "value": "=dialog.http_results.content.items"
+            },
+            {
+              "$kind": "Microsoft.Foreach",
+              "$designer": {
+                "id": "7BX1hY"
+              },
+              "index": "dialog.foreach.index",
+              "value": "dialog.foreach.value",
+              "itemsProperty": "dialog.pois",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "rWDmZT"
+                  },
+                  "activity": "${SendActivity_rWDmZT()}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "filtered_pois.lg",
+  "recognizer": "filtered_pois.lu.qna",
+  "id": "filtered_pois"
+}

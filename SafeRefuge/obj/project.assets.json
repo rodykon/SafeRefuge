@@ -9718,27 +9718,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\KakasF\\.nuget\\packages\\": {}
+    "/home/kali/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\KakasF\\Desktop\\SafeRefuge\\SafeRefuge\\SafeRefuge.csproj",
+      "projectUniqueName": "/home/kali/dev/selek/SafeRefuge/SafeRefuge/SafeRefuge.csproj",
       "projectName": "SafeRefuge",
-      "projectPath": "C:\\Users\\KakasF\\Desktop\\SafeRefuge\\SafeRefuge\\SafeRefuge.csproj",
-      "packagesPath": "C:\\Users\\KakasF\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\KakasF\\Desktop\\SafeRefuge\\SafeRefuge\\obj\\",
+      "projectPath": "/home/kali/dev/selek/SafeRefuge/SafeRefuge/SafeRefuge.csproj",
+      "packagesPath": "/home/kali/.nuget/packages/",
+      "outputPath": "/home/kali/dev/selek/SafeRefuge/SafeRefuge/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\KakasF\\Desktop\\SafeRefuge\\SafeRefuge\\NuGet.Config",
-        "C:\\Users\\KakasF\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/home/kali/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
-        "https://api.nuget.org/v3/index.json": {},
-        "https://botbuilder.myget.org/F/botbuilder-v4-dotnet-daily/api/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
@@ -9789,7 +9787,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.422\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.420/RuntimeIdentifierGraph.json"
       }
     }
   },

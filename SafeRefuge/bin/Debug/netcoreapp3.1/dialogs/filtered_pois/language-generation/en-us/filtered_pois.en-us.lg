@@ -1,0 +1,16 @@
+[import](common.lg)
+
+# SendActivity_POfQnp()
+[Activity
+    Text = ${SendActivity_POfQnp_text()}
+]
+
+# SendActivity_POfQnp_text()
+- Something went wrong :( ${dialog.http_results.content.message}
+# SendActivity_rWDmZT()
+[Activity
+    Text = ${SendActivity_rWDmZT_text()}
+]
+
+# SendActivity_rWDmZT_text()
+- ${dialog.foreach.value.name}:
