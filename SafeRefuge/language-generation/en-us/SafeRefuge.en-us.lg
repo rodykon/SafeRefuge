@@ -6,7 +6,8 @@
 ]
 
 # SendActivity_Greeting_text()
-- Welcome to your bot, Type poi to start.
+- Welcome to Safe Refuge Bot.
+- I am here to help you find the place you need to go to.
 # SendActivity_DidNotUnderstand()
 [Activity
     Text = ${SendActivity_DidNotUnderstand_text()}

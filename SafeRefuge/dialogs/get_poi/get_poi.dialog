@@ -74,12 +74,152 @@
             "inlineOr": " or ",
             "inlineSeparator": ", "
           },
-          "style": "heroCard",
+          "style": "auto",
           "property": "user.choice",
           "choices": "${user.catslist}",
           "recognizerOptions": {
             "recognizeOrdinals": true
           }
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "DUGgw6"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "prompt": "${ChoiceInput_Prompt_DUGgw6()}",
+          "choices": [
+            "Anywhere",
+            "Country",
+            "Nearby"
+          ],
+          "property": "user.location"
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "864vU9"
+          },
+          "cases": [
+            {
+              "value": "Anywhere",
+              "actions": []
+            },
+            {
+              "value": "Country",
+              "actions": [
+                {
+                  "$kind": "Microsoft.HttpRequest",
+                  "$designer": {
+                    "id": "HtX5xP"
+                  },
+                  "resultProperty": "dialog.countries",
+                  "method": "GET",
+                  "url": "http://c4u-match-org.appspot.com/distinct/category?field=country",
+                  "responseType": "json",
+                  "contentType": "application/json"
+                },
+                {
+                  "$kind": "Microsoft.ChoiceInput",
+                  "$designer": {
+                    "id": "5v1QMe"
+                  },
+                  "defaultLocale": "en-us",
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": false,
+                  "allowInterruptions": false,
+                  "prompt": "${ChoiceInput_Prompt_5v1QMe()}",
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "choiceOptions": {
+                    "includeNumbers": true,
+                    "inlineOrMore": ", or ",
+                    "inlineOr": " or ",
+                    "inlineSeparator": ", "
+                  },
+                  "property": "user.country",
+                  "recognizerOptions": {
+                    "recognizeOrdinals": true,
+                    "recognizeNumbers": true
+                  },
+                  "choices": "${dialog.countries.content}"
+                },
+                {
+                  "$kind": "Microsoft.HttpRequest",
+                  "$designer": {
+                    "id": "gsGvj3"
+                  },
+                  "resultProperty": "dialog.cities",
+                  "method": "GET",
+                  "url": "http://c4u-match-org.appspot.com/distinct/category?field=city&country=${user.country}",
+                  "responseType": "json",
+                  "contentType": "application/json"
+                },
+                {
+                  "$kind": "Microsoft.ChoiceInput",
+                  "$designer": {
+                    "id": "OFseeN"
+                  },
+                  "defaultLocale": "en-us",
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": false,
+                  "allowInterruptions": false,
+                  "prompt": "${ChoiceInput_Prompt_OFseeN()}",
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "choiceOptions": {
+                    "includeNumbers": true,
+                    "inlineOrMore": ", or ",
+                    "inlineOr": " or ",
+                    "inlineSeparator": ", "
+                  },
+                  "property": "user.city",
+                  "recognizerOptions": {
+                    "recognizeOrdinals": true
+                  },
+                  "choices": "${dialog.cities.content}",
+                  "style": "suggestedAction"
+                },
+                {
+                  "$kind": "Microsoft.IfCondition",
+                  "$designer": {
+                    "id": "965Pj8",
+                    "comment": "Checks if any city or specific city"
+                  },
+                  "condition": "=user.city==\"Any\""
+                }
+              ]
+            },
+            {
+              "value": "Nearby",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "BhWMfx"
+                  },
+                  "activity": "${SendActivity_BhWMfx()}"
+                }
+              ]
+            }
+          ],
+          "condition": "user.location",
+          "default": []
         }
       ]
     }

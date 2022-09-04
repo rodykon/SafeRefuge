@@ -42,6 +42,17 @@
                   "activity": "${SendActivity_Greeting()}"
                 }
               ]
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "BgXIbU"
+              },
+              "activityProcessed": true,
+              "dialog": "get_poi",
+              "options": {
+                "check": "cool"
+              }
             }
           ]
         }

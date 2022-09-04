@@ -6,7 +6,7 @@
 ]
 
 # SendActivity_dzZ47C_text()
-- Lets search for pois!
+- Lets search for what you need!
 # ChoiceInput_Prompt_Z2AuVh()
 [Activity
     Text = ${ChoiceInput_Prompt_Z2AuVh_text()}
@@ -14,3 +14,37 @@
 
 # ChoiceInput_Prompt_Z2AuVh_text()
 - What are you looking for?
+# ChoiceInput_Prompt_DUGgw6()
+[Activity
+    Text = ${ChoiceInput_Prompt_DUGgw6_text()}
+]
+
+# ChoiceInput_Prompt_DUGgw6_text()
+- Please provide a location
+# ChoiceInput_Prompt_hMJ4eH()
+[Activity
+    Text = ${ChoiceInput_Prompt_hMJ4eH_text()}
+]
+
+# ChoiceInput_Prompt_hMJ4eH_text()
+- What country to search in?
+# ChoiceInput_Prompt_OFseeN_text()
+- What city to search in? (Type Any for any city)
+# ChoiceInput_Prompt_OFseeN()
+[Activity
+    Text = ${ChoiceInput_Prompt_OFseeN_text()}
+]
+
+# SendActivity_BhWMfx()
+[Activity
+    Text = ${SendActivity_BhWMfx_text()}
+]
+
+# SendActivity_BhWMfx_text()
+- Feature not available yet :(
+# ChoiceInput_Prompt_5v1QMe_text()
+- Which country?
+# ChoiceInput_Prompt_5v1QMe()
+[Activity
+    Text = ${ChoiceInput_Prompt_5v1QMe_text()}
+]
